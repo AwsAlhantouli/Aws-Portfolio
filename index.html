@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aws Alhantouli Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Link to External CSS File -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aws Alhantouli Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header>
-        <h1>Aws Alhantouli</h1>
-        <p>Data Scientist | AI Enthusiast | GDG Leader</p>
-        <nav>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#resume">Resume</a></li>
-        </ul>
+  <header>
+    <!-- 1️⃣ Greeting inserted here -->
+    <p id="topName" style="margin:0; font-size:1.1rem; font-weight:bold;"></p>
+
+    <h1 id="userFullName">Aws Alhantouli</h1>
+    <p>Data Scientist | AI Enthusiast | GDG Leader</p>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#resume">Resume</a></li>
+      </ul>
     </nav>
-    </header>
 
-   <!-- About Section -->
-<!-- About Section -->
-<div class="container">
-        <!-- About Section -->
-        <section class="section" id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-        <!-- Personal Image -->
+    <!-- Dark Mode & Clock -->
+    <div style="margin-top:10px;">
+      <button id="toggleDarkMode">Toggle Dark Mode</button>
+      <span id="clock" style="margin-left:20px; font-weight:bold;"></span>
+    </div>
+  </header>
+
+  <div class="container" id="home">
+    <!-- About Section -->
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <div class="about-container">
         <div class="image-container">
-            <img src="Personal Photo.jpg" alt="Aws Alhantouli" class="profile-img">
+          <img src="Personal Photo.jpg" alt="Aws Alhantouli" class="profile-img"/>
         </div>
-
-        <!-- About Text -->
         <div class="about-text">
-            <p>Hello! I’m <strong>Aws</strong>, a passionate and driven <strong>Data Scientist</strong> with a deep interest in <strong>Artificial Intelligence</strong> and <strong>Machine Learning</strong>. My journey in the world of data science has been a blend of academic curiosity, hands-on project experience, and a strong desire to make a meaningful impact through technology.</p>
+          <p>Hello! I’m <strong>Aws</strong>, a passionate and driven <strong>Data Scientist</strong> with a deep interest in <strong>Artificial Intelligence</strong> and <strong>Machine Learning</strong>. My journey in the world of data science has been a blend of academic curiosity, hands-on project experience, and a strong desire to make a meaningful impact through technology.</p>
             <p>With a solid foundation in <strong>cloud computing</strong>, <strong>data analytics</strong>, and <strong>deep learning</strong>, I have explored a range of exciting projects—from <strong>Arabic text diacritization</strong> to <strong>image classification</strong> with advanced <strong>convolutional neural networks</strong>. I’ve honed my skills in problem-solving, critical thinking, and creating scalable AI solutions.</p>
             <p>In addition to my technical skills, I am also a proud <strong>leader of the Google Developer Group (GDG)</strong> at my university. These roles have helped me develop leadership, communication, and team-building skills, allowing me to work on community-driven initiatives and collaborative projects.</p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-
-
-        <!-- Skills Section -->
-        <section class="section" id="skills">
-            <h2>Skills</h2>
-            <ul>
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <ul>
                 <li>Data Science & Machine Learning</li>
                 <li>Artificial Intelligence & Deep Learning</li>
                 <li>Python, TensorFlow, Keras, PyTorch</li>
@@ -61,158 +61,174 @@
                 <li>Natural Language Processing (NLP)</li>
                 <li>Image Classification & Computer Vision</li>
                 <li>Git, GitHub, Docker</li>
-            </ul>
-        </section>
-        
-        
-    <!-- Courses Section -->
-<section class="section" id="courses">
-    <h2>Courses</h2>
-    
-    <div class="course">
-        <h3>Machine Learning</h3>
-        <p>This course provided a strong foundation in machine learning concepts, covering supervised and unsupervised learning techniques. I worked on projects involving regression, classification, and clustering using Scikit-Learn.</p>
-    </div>
+      </ul>
+    </section>
 
-    <div class="course">
-        <h3>Programming For Data Analytics 2</h3>
-        <p>Through this course, I gained hands-on experience with deep neural networks, convolutional networks (CNNs), and sequence models using TensorFlow and Keras. I applied these concepts to real-world AI applications..</p>
+    <!-- Courses Section -->
+    <section class="section" id="courses">
+    <h2>Courses</h2>
+    <div id="dynamicCoursesContainer"></div>
+    </section>
+
+     <section class="section" id="projects">
+      <h2>Projects</h2>
+      <!-- Project 1: Arabic Text Diacritization -->
+      <div class="card">
+        <h3>Arabic Text Diacritization</h3>
+        <p>Explored different deep learning and transfer learning models to implement a robust system for restoring diacritics to Arabic text.</p>
+        <a href="javascript:void(0);" class="button" onclick="openModal('project1')">View Project</a>
+      </div>
+
+      <!-- Project 2: Image Classification with DTD -->
+      <div class="card">
+        <h3>Image Classification with DTD</h3>
+        <p>Explored and applied various deep learning and transfer learning models to classify textures into 47 unique categories using convolutional neural networks.</p>
+        <a href="javascript:void(0);" class="button" onclick="openModal('project2')">View Project</a>
+      </div>
+
+      <!-- Project 3: Weather Data in Action -->
+      <div class="card">
+        <h3>Weather Data in Action</h3>
+        <p>Managing real-time weather data fetched via an API key, transmitting it through Kafka, processing it within a Spark framework, and showcasing the findings through a user-friendly interface using Streamlit.</p>
+        <a href="javascript:void(0);" class="button" onclick="openModal('project3')">View Project</a>
+      </div>
+
+      <!-- Project 4: Exploring Deep Learning Models for Garbage Sorting -->
+      <div class="card">
+        <h3>Exploring Deep Learning Models for Garbage Sorting</h3>
+        <p>Developed diverse deep learning structures for categorizing garbage, experimenting with methodologies to gauge their responsiveness to parameters, and leveraging transfer learning for optimization.</p>
+        <a href="javascript:void(0);" class="button" onclick="openModal('project4')">View Project</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal Section -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p><strong>Description:</strong> <span id="modalDescription"></span></p>
+      <p><strong>Technologies:</strong> <span id="modalTechnologies"></span></p>
+      <p><strong>Challenges:</strong> <span id="modalChallenges"></span></p>
+      <p><strong>GitHub:</strong> <a id="modalGithub" href="#" target="_blank">Link to GitHub</a></p>
     </div>
+  </div>
+
+   
+<!-- Contact Section -->
+<section class="section" id="contact">
+  <h3>Send me a message</h3>
+  <form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" />
     
-    <div class="course">
-        <h3>Cloud Computing</h3>
-        <p>This course gave me a strong foundation as I explored different cloud computing concepts, I also had the chance to work on AWS and get an offical certification in it.</p>
-    </div>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" />
+    
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+    
+    <button type="submit">Send</button>
+    <div id="formMessage" class="alert-container"></div>
+  </form>
 </section>
 
-        <!-- Projects Section -->
-        <section class="section" id="projects">
-            <h2>Projects</h2>
+    <!-- Resume Section -->
+    <section class="section" id="resume">
+      <h2>Download My Resume</h2>
+      <a href="Aws Alhantouli - CV.pdf" download="Aws Alhantouli - CV.pdf" class="resume-btn">Download Resume</a>
+    </section>
 
-            <!-- Project 1: Arabic Text Diacritization -->
-            <div class="card">
-                <h3>Arabic Text Diacritization</h3>
-                <p>Explored different deep learning and transfer learning models to implement a robust system for restoring diacritics to Arabic text.</p>
-                <a href="javascript:void(0);" class="button" onclick="openModal('project1')">View Project</a>
-            </div>
 
-            <!-- Project 2: Image Classification with DTD -->
-            <div class="card">
-                <h3>Image Classification with DTD</h3>
-                <p>Explored and applied various deep learning and transfer learning models to classify textures into 47 unique categories using convolutional neural networks.</p>
-                <a href="javascript:void(0);" class="button" onclick="openModal('project2')">View Project</a>
-            </div>
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" title="Go to top">↑</button>
 
-            <!-- Project 3: Weather Data in Action -->
-            <div class="card">
-                <h3>Weather Data in Action</h3>
-                <p>Managing real-time weather data fetched via an API key, transmitting it through Kafka, processing it within a Spark framework, and showcasing the findings through a user-friendly interface using Streamlit.</p>
-                <a href="javascript:void(0);" class="button" onclick="openModal('project3')">View Project</a>
-            </div>
-
-            <!-- Project 4: Exploring Deep Learning Models for Garbage Sorting -->
-            <div class="card">
-                <h3>Exploring Deep Learning Models for Garbage Sorting</h3>
-                <p>Developed diverse deep learning structures for categorizing garbage, experimenting with methodologies to gauge their responsiveness to parameters, and leveraging transfer learning for optimization.</p>
-                <a href="javascript:void(0);" class="button" onclick="openModal('project4')">View Project</a>
-            </div>
-        </section>
-
-      <!-- Contact Section -->
-<section class="section" id="contact">
-    <h2>Contact</h2>
-    <p>Feel free to reach out via email or connect on LinkedIn!</p>
-    <ul>
+  <!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="contact-footer">
+      <h2>Get In Touch</h2>
+      <p>Feel free to reach out for collaborations or just to say hello!</p>
+      <ul>
         <li>Email: <a href="mailto:aws.alhantouli@gmail.com">aws.alhantouli@gmail.com</a></li>
         <li>LinkedIn: <a href="https://www.linkedin.com/in/aws-alhantouli" target="_blank">linkedin.com/in/aws-alhantouli</a></li>
         <li>GitHub: <a href="https://github.com/AwsAlhantouli" target="_blank">github.com/AwsAlhantouli</a></li>
-    </ul>
-
-    <!-- Contact Form -->
-    <h3>Send me a message</h3>
-    <form action="https://formspree.io/f/{your_form_id}" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <button type="submit">Send</button>
-    </form>
-</section>
-
-    <section id="resume">
-    <h2>Download My Resume</h2>
-    <a href="Aws Alhantouli - CV.pdf" download class="resume-btn">Download Resume</a>
-</section>
-
-      
-
-
-    <footer>
-        <p>© 2025 Aws Alhantouli. All rights reserved.</p>
-    </footer>
-
-    <!-- Modal for Project Details -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3 id="modalTitle">Project Title</h3>
-            <p><strong>Description:</strong> <span id="modalDescription">Detailed description of the project, including techniques, models, and results.</span></p>
-            <p><strong>Technologies Used:</strong> <span id="modalTechnologies">Python, TensorFlow, Keras, etc.</span></p>
-            <p><strong>Challenges and Learnings:</strong> <span id="modalChallenges">Discuss the challenges faced and what you learned throughout the project.</span></p>
-            <p><strong>GitHub Repository:</strong> <a id="modalGitHub" href="#" target="_blank">View Code</a></p>
-        </div>
+      </ul>
     </div>
 
-    <!-- Modal JavaScript -->
-    <script>
+    <div class="contact-footer">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#resume">Resume</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-copyright">
+      <p>© 2025 Aws Alhantouli. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="scripts.js"></script>
+  <script>
         function openModal(project) {
-            let title, description, technologies, challenges, github;
+      let title, description, technologies, challenges, github;
 
-            if (project === 'project1') {
-                title = "Arabic Text Diacritization";
-                description = "Explored different deep learning and transfer learning models to implement a robust system for restoring diacritics to Arabic text.";
-                technologies = "Python, TensorFlow, Keras, HuggingFace, BERT, Arabic NLP";
-                challenges = "The challenge was adapting BERT for Arabic text and handling large-scale diacritization tasks.";
-                github = "https://github.com/AwsAlhantouli/Arabic-Text-Diacritization";
-            }
-            if (project === 'project2') {
-                title = "Image Classification with DTD";
-                description = "Explored and applied various deep learning and transfer learning models to classify textures into 47 unique categories using convolutional neural networks.";
-                technologies = "Python, TensorFlow, Keras, CNN, DTD dataset";
-                challenges = "Dealing with the complex patterns in the images and tuning the hyperparameters.";
-                github = "https://github.com/AwsAlhantouli/DTD-ML";
-            }
-            if (project === 'project3') {
-                title = "Weather Data in Action";
-                description = "Managing real-time weather data fetched via an API key, transmitting it through Kafka, processing it within a Spark framework, and showcasing the findings through a user-friendly interface using Streamlit.";
-                technologies = "Python, Kafka, Spark, Streamlit, API";
-                challenges = "Integrating real-time data streaming and ensuring smooth processing at scale.";
-                github = "https://github.com/AwsAlhantouli/Weather-Data-Stream";
-            }
-            if (project === 'project4') {
-                title = "Exploring Deep Learning Models for Garbage Sorting";
-                description = "Developed diverse deep learning structures for categorizing garbage, experimenting with methodologies to gauge their responsiveness to parameters, and leveraging transfer learning for optimization.";
-                technologies = "Python, TensorFlow, Keras, CNN, Transfer Learning";
-                challenges = "Handling the imbalance in the dataset and fine-tuning models for accuracy.";
-                github = "https://github.com/AwsAlhantouli/Garbage-Classification";
-            }
+      if (project === 'project1') {
+        title = "Arabic Text Diacritization";
+        description = "Explored different deep learning and transfer learning models to implement a robust system for restoring diacritics to Arabic text.";
+        technologies = "Python, TensorFlow, Keras, HuggingFace, BERT, Arabic NLP";
+        challenges = "The challenge was adapting BERT for Arabic text and handling large-scale diacritization tasks.";
+        github = "https://github.com/AwsAlhantouli/Arabic-Text-Diacritization";
+      }
+      if (project === 'project2') {
+        title = "Image Classification with DTD";
+        description = "Explored and applied various deep learning and transfer learning models to classify textures into 47 unique categories using convolutional neural networks.";
+        technologies = "Python, TensorFlow, Keras, CNN, DTD dataset";
+        challenges = "Dealing with the complex patterns in the images and tuning the hyperparameters.";
+        github = "https://github.com/AwsAlhantouli/DTD-ML";
+      }
+      if (project === 'project3') {
+        title = "Weather Data in Action";
+        description = "Managing real-time weather data fetched via an API key, transmitting it through Kafka, processing it within a Spark framework, and showcasing the findings through a user-friendly interface using Streamlit.";
+        technologies = "Python, Kafka, Spark, Streamlit, API";
+        challenges = "Integrating real-time data streaming and ensuring smooth processing at scale.";
+        github = "https://github.com/AwsAlhantouli/Weather-Data-Stream";
+      }
+      if (project === 'project4') {
+        title = "Exploring Deep Learning Models for Garbage Sorting";
+        description = "Developed diverse deep learning structures for categorizing garbage, experimenting with methodologies to gauge their responsiveness to parameters, and leveraging transfer learning for optimization.";
+        technologies = "Python, TensorFlow, Keras, CNN";
+        challenges = "Dealing with unstructured data and fine-tuning the model for better accuracy.";
+        github = "https://github.com/AwsAlhantouli/Garbage-Sorting-ML";
+      }
 
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDescription').innerText = description;
-            document.getElementById('modalTechnologies').innerText = technologies;
-            document.getElementById('modalChallenges').innerText = challenges;
-            document.getElementById('modalGitHub').href = github;
-            document.getElementById('projectModal').style.display = "block";
-        }
+      // Set modal content
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalDescription").innerText = description;
+      document.getElementById("modalTechnologies").innerText = technologies;
+      document.getElementById("modalChallenges").innerText = challenges;
+      document.getElementById("modalGithub").href = github;
 
-        function closeModal() {
-            document.getElementById('projectModal').style.display = "none";
-        }
-    </script>
+      // Display modal
+      document.getElementById("projectModal").style.display = "block";
+    }
+
+    function closeModal() {
+      // Hide the modal
+      document.getElementById("projectModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside of modal content
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("projectModal")) {
+        closeModal();
+      }
+    }
+   </script>
 </body>
 </html>
